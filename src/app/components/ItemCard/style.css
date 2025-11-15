@@ -1,0 +1,32 @@
+.card-wrapper {
+  perspective: 1200px;
+  display: inline-block;
+}
+
+.infobox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 1);
+  transform-style: preserve-3d;
+  border-radius: 10px;
+  transition: box-shadow 0.4s ease;
+  will-change: transform, filter;
+}
+
+.infobox:hover {
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.85);
+}
+
+.background {
+  color: #fff;
+  border-style: solid;
+  border-image-slice: 96 fill;
+  border-image-width: 40px;
+  border-image-repeat: stretch;
+  padding: 16px 18px;
+}
+
+.breakline {
+  background-image: url(/images/breakline.png);
+}

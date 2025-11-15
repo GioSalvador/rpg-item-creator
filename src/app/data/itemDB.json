@@ -1,0 +1,764 @@
+{
+  "rarities": [
+    {
+      "id": 1,
+      "name": "Common",
+      "frame": "/images/frames/commom-frame.png",
+      "color": "#ffffff",
+      "maxAffixes": 2,
+      "affixValueRange": [1, 50],
+      "suffixesAllowed": false,
+      "suffixValueRange": null,
+      "uniqueSuffixAllowed": false
+    },
+    {
+      "id": 2,
+      "name": "Magic",
+      "frame": "/images/frames/magic-frame.png",
+      "color": "#3366ff",
+      "maxAffixes": 3,
+      "affixValueRange": [1, 50],
+      "suffixesAllowed": false,
+      "suffixValueRange": null,
+      "uniqueSuffixAllowed": false
+    },
+    {
+      "id": 3,
+      "name": "Mythic",
+      "frame": "/images/frames/mythic-frame.png",
+      "color": "#cda1d8",
+      "maxAffixes": 4,
+      "affixValueRange": [1, 50],
+      "suffixesAllowed": true,
+      "suffixValueRange": [50, 100],
+      "uniqueSuffixAllowed": false
+    },
+    {
+      "id": 4,
+      "name": "Rare",
+      "frame": "/images/frames/rare-frame.png",
+      "color": "#ffff00",
+      "maxAffixes": 5,
+      "affixValueRange": [1, 50],
+      "suffixesAllowed": true,
+      "suffixValueRange": [50, 100],
+      "uniqueSuffixAllowed": false
+    },
+    {
+      "id": 5,
+      "name": "Unique",
+      "frame": "/images/frames/unique-frame.png",
+      "color": "#db8114",
+      "maxAffixes": 6,
+      "affixValueRange": [1, 50],
+      "suffixesAllowed": true,
+      "suffixValueRange": [100, 200],
+      "uniqueSuffixAllowed": true
+    }
+  ],
+  "itemType": [
+    {
+      "id": 1,
+      "name": "Axe",
+      "images": ["/images/weapons/axes/axe1.png", "/images/weapons/axes/axe2.png"]
+    },
+    {
+      "id": 2,
+      "name": "Two-Handed Axe",
+      "images": ["/images/weapons/two-handed-axes/two-handed-axe1.png"]
+    },
+    {
+      "id": 3,
+      "name": "Bow",
+      "images": [
+        "/images/weapons/bows/bow1.png",
+        "/images/weapons/bows/bow2.png",
+        "/images/weapons/bows/bow3.png"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Daggers",
+      "images": ["/images/weapons/daggers/dagger1.png", "/images/weapons/daggers/dagger2.png"]
+    },
+    {
+      "id": 5,
+      "name": "Mace",
+      "images": [
+        "/images/weapons/maces/mace1.png",
+        "/images/weapons/maces/mace2.png",
+        "/images/weapons/maces/mace3.png"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Two-Handed Mace",
+      "images": ["/images/weapons/two-handed-maces/two-handed-mace1.png"]
+    },
+    {
+      "id": 7,
+      "name": "Scythe",
+      "images": ["/images/weapons/scythes/scythe1.png", "/images/weapons/scythes/scythe2.png"]
+    },
+    {
+      "id": 8,
+      "name": "Two-Handed Scythe",
+      "images": ["/images/weapons/two-handed-scythes/two-handed-scythe1.png"]
+    },
+    {
+      "id": 9,
+      "name": "Staff",
+      "images": [
+        "/images/weapons/staffs/staff1.png",
+        "/images/weapons/staffs/staff2.png",
+        "/images/weapons/staffs/staff3.png",
+        "/images/weapons/staffs/staff4.png",
+        "/images/weapons/staffs/staff5.png"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Sword",
+      "images": [
+        "/images/weapons/swords/sword1.png",
+        "/images/weapons/swords/sword2.png",
+        "/images/weapons/swords/sword3.png",
+        "/images/weapons/swords/sword4.png"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Two-Handed Sword",
+      "images": [
+        "/images/weapons/two-handed-swords/two-handed-sword1.png",
+        "/images/weapons/two-handed-swords/two-handed-sword2.png",
+        "/images/weapons/two-handed-swords/two-handed-sword3.png"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Wand",
+      "images": [
+        "/images/weapons/wands/wand1.png",
+        "/images/weapons/wands/wand2.png",
+        "/images/weapons/wands/wand3.png"
+      ]
+    }
+  ],
+  "affixes": [
+    {
+      "id": 1,
+      "name": "Damage to Bleeding Enemies",
+      "allowedTypes": [
+        "Axe",
+        "Bow",
+        "Dagger",
+        "Mace",
+        "Scythe",
+        "Staff",
+        "Sword",
+        "Two-Handed Axe",
+        "Two-Handed Mace",
+        "Two-Handed Scythe",
+        "Two-Handed Sword",
+        "Wand"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Damage to Close Enemies",
+      "allowedTypes": [
+        "Axe",
+        "Bow",
+        "Dagger",
+        "Mace",
+        "Scythe",
+        "Staff",
+        "Sword",
+        "Two-Handed Axe",
+        "Two-Handed Mace",
+        "Two-Handed Scythe",
+        "Two-Handed Sword",
+        "Wand"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Cooldown Reduction",
+      "allowedTypes": [
+        "Axe",
+        "Bow",
+        "Dagger",
+        "Mace",
+        "Scythe",
+        "Staff",
+        "Sword",
+        "Two-Handed Axe",
+        "Two-Handed Mace",
+        "Two-Handed Scythe",
+        "Two-Handed Sword",
+        "Wand"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Chance for Storm Strike",
+      "allowedTypes": [
+        "Axe",
+        "Bow",
+        "Dagger",
+        "Mace",
+        "Scythe",
+        "Staff",
+        "Sword",
+        "Two-Handed Axe",
+        "Two-Handed Mace",
+        "Two-Handed Scythe",
+        "Two-Handed Sword",
+        "Wand"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Lucky Hit Chance",
+      "allowedTypes": [
+        "Axe",
+        "Bow",
+        "Dagger",
+        "Mace",
+        "Scythe",
+        "Staff",
+        "Sword",
+        "Two-Handed Axe",
+        "Two-Handed Mace",
+        "Two-Handed Scythe",
+        "Two-Handed Sword",
+        "Wand"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Freeze Duration",
+      "allowedTypes": [
+        "Axe",
+        "Bow",
+        "Dagger",
+        "Mace",
+        "Scythe",
+        "Staff",
+        "Sword",
+        "Two-Handed Axe",
+        "Two-Handed Mace",
+        "Two-Handed Scythe",
+        "Two-Handed Sword",
+        "Wand"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Fire Duration",
+      "allowedTypes": [
+        "Axe",
+        "Bow",
+        "Dagger",
+        "Mace",
+        "Scythe",
+        "Staff",
+        "Sword",
+        "Two-Handed Axe",
+        "Two-Handed Mace",
+        "Two-Handed Scythe",
+        "Two-Handed Sword",
+        "Wand"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Damage Reduction",
+      "allowedTypes": [
+        "Axe",
+        "Bow",
+        "Dagger",
+        "Mace",
+        "Scythe",
+        "Staff",
+        "Sword",
+        "Two-Handed Axe",
+        "Two-Handed Mace",
+        "Two-Handed Scythe",
+        "Two-Handed Sword",
+        "Wand"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Chance to Heal",
+      "allowedTypes": [
+        "Axe",
+        "Bow",
+        "Dagger",
+        "Mace",
+        "Scythe",
+        "Staff",
+        "Sword",
+        "Two-Handed Axe",
+        "Two-Handed Mace",
+        "Two-Handed Scythe",
+        "Two-Handed Sword",
+        "Wand"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Attack Speed",
+      "allowedTypes": [
+        "Axe",
+        "Bow",
+        "Dagger",
+        "Mace",
+        "Scythe",
+        "Staff",
+        "Sword",
+        "Two-Handed Axe",
+        "Two-Handed Mace",
+        "Two-Handed Scythe",
+        "Two-Handed Sword",
+        "Wand"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Critical Strike Damage",
+      "allowedTypes": [
+        "Axe",
+        "Bow",
+        "Dagger",
+        "Mace",
+        "Scythe",
+        "Staff",
+        "Sword",
+        "Two-Handed Axe",
+        "Two-Handed Mace",
+        "Two-Handed Scythe",
+        "Two-Handed Sword",
+        "Wand"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Movement Speed",
+      "allowedTypes": [
+        "Axe",
+        "Bow",
+        "Dagger",
+        "Mace",
+        "Scythe",
+        "Staff",
+        "Sword",
+        "Two-Handed Axe",
+        "Two-Handed Mace",
+        "Two-Handed Scythe",
+        "Two-Handed Sword",
+        "Wand"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Critical Chance",
+      "allowedTypes": [
+        "Axe",
+        "Bow",
+        "Dagger",
+        "Mace",
+        "Scythe",
+        "Staff",
+        "Sword",
+        "Two-Handed Axe",
+        "Two-Handed Mace",
+        "Two-Handed Scythe",
+        "Two-Handed Sword",
+        "Wand"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Lightning Damage",
+      "allowedTypes": [
+        "Axe",
+        "Bow",
+        "Dagger",
+        "Mace",
+        "Scythe",
+        "Staff",
+        "Sword",
+        "Two-Handed Axe",
+        "Two-Handed Mace",
+        "Two-Handed Scythe",
+        "Two-Handed Sword",
+        "Wand"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Poison Damage",
+      "allowedTypes": [
+        "Axe",
+        "Bow",
+        "Dagger",
+        "Mace",
+        "Scythe",
+        "Staff",
+        "Sword",
+        "Two-Handed Axe",
+        "Two-Handed Mace",
+        "Two-Handed Scythe",
+        "Two-Handed Sword",
+        "Wand"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Elemental Damage",
+      "allowedTypes": [
+        "Axe",
+        "Dagger",
+        "Mace",
+        "Scythe",
+        "Sword",
+        "Two-Handed Axe",
+        "Two-Handed Mace",
+        "Two-Handed Scythe",
+        "Two-Handed Sword"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Physical Damage",
+      "allowedTypes": [
+        "Axe",
+        "Bow",
+        "Dagger",
+        "Mace",
+        "Scythe",
+        "Staff",
+        "Sword",
+        "Two-Handed Axe",
+        "Two-Handed Mace",
+        "Two-Handed Scythe",
+        "Two-Handed Sword",
+        "Wand"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Chance for projectiles to cast twice",
+      "allowedTypes": ["Bow"]
+    },
+    {
+      "id": 19,
+      "name": "Penetrating Shot",
+      "allowedTypes": ["Bow"]
+    },
+    {
+      "id": 20,
+      "name": "Chance to Cast an additional Elemental Skill",
+      "allowedTypes": ["Staff", "Wand"]
+    },
+    {
+      "id": 21,
+      "name": "Chance to cast an additional Elemental Skill",
+      "allowedTypes": ["Staff", "Wand"]
+    },
+    {
+      "id": 22,
+      "name": "Chance to chains to +2 targets",
+      "allowedTypes": ["Staff", "Wand"]
+    },
+    {
+      "id": 23,
+      "name": "Chance to Incinerate",
+      "allowedTypes": ["Staff", "Wand"]
+    }
+  ],
+  "suffixes": [
+    {
+      "id": 1,
+      "name": "Alacrity",
+      "description": "Your Skills Cooldown [VALUE]% faster while moving.",
+      "allowedTypes": [
+        "Axe",
+        "Bow",
+        "Dagger",
+        "Mace",
+        "Scythe",
+        "Staff",
+        "Sword",
+        "Two-Handed Axe",
+        "Two-Handed Mace",
+        "Two-Handed Scythe",
+        "Two-Handed Sword",
+        "Wand"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Anemia",
+      "description": "Damaging Bleeding or Vulnerable enemies has a [VALUE]% chance to Stun them for 2 seconds.",
+      "allowedTypes": [
+        "Axe",
+        "Bow",
+        "Dagger",
+        "Mace",
+        "Scythe",
+        "Staff",
+        "Sword",
+        "Two-Handed Axe",
+        "Two-Handed Mace",
+        "Two-Handed Scythe",
+        "Two-Handed Sword",
+        "Wand"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Avoidance",
+      "description": "Whenever an enemy hits you, your Dodge Chance against that enemy increases by [VALUE]. Successfully Dodging resets this bonus.",
+      "allowedTypes": [
+        "Axe",
+        "Bow",
+        "Dagger",
+        "Mace",
+        "Scythe",
+        "Staff",
+        "Sword",
+        "Two-Handed Axe",
+        "Two-Handed Mace",
+        "Two-Handed Scythe",
+        "Two-Handed Sword",
+        "Wand"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Berserk Ripping",
+      "description": "Whenever you deal direct damage while Berserking, inflict [VALUE]% of the base damage dealt as additional Bleeding damage over 5 seconds.",
+      "allowedTypes": [
+        "Axe",
+        "Mace",
+        "Sword",
+        "Two-Handed Axe",
+        "Two-Handed Mace",
+        "Two-Handed Sword"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Poisonous Clouds",
+      "description": "When entering Stealth, create a cloud that deals [VALUE]% Poison damage over 6 seconds.",
+      "allowedTypes": [
+        "Axe",
+        "Bow",
+        "Dagger",
+        "Mace",
+        "Scythe",
+        "Staff",
+        "Sword",
+        "Two-Handed Axe",
+        "Two-Handed Mace",
+        "Two-Handed Scythe",
+        "Two-Handed Sword",
+        "Wand"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Biting Cold",
+      "description": "When you Freeze an enemy there is a [VALUE]% chance they become Vulnerable for 3 seconds.",
+      "allowedTypes": ["Staff", "Wand"]
+    },
+    {
+      "id": 7,
+      "name": "Binding Morass",
+      "description": "Dealing indirect damage to an enemy progressively Slows them by [VALUE]% for 3 seconds. You deal 20% increased damage to Slowed Enemies.",
+      "allowedTypes": [
+        "Axe",
+        "Bow",
+        "Dagger",
+        "Mace",
+        "Scythe",
+        "Staff",
+        "Sword",
+        "Two-Handed Axe",
+        "Two-Handed Mace",
+        "Two-Handed Scythe",
+        "Two-Handed Sword",
+        "Wand"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Charged Flash",
+      "description": "After Charged Bolts hits enemies 50 times, your next 3 casts of Charged Bolts become waves that pierce and deal [VALUE]% Critical Shock Damage.",
+      "allowedTypes": ["Bow"]
+    },
+    {
+      "id": 9,
+      "name": "Conflagration",
+      "description": "While channeling Incinerate, your Burning damage is increased by [VALUE]%. Enemies hit by Incinerate explode.",
+      "allowedTypes": ["Staff", "Wand"]
+    },
+    {
+      "id": 10,
+      "name": "Control",
+      "description": "You deal [VALUE]% more damage to Immobilized, Stunned, or Frozen enemies.",
+      "allowedTypes": ["Staff", "Wand"]
+    }
+  ],
+
+  "uniqueSuffixes": [
+    {
+      "id": 1,
+      "name": "Cleaver",
+      "description": "Critically Striking an enemy has up to a 100% chance to Fear and Slow them by [VALUE]% for 4 seconds.",
+      "allowedTypes": ["Axe"]
+    },
+    {
+      "id": 2,
+      "name": "Shred",
+      "description": "Killing an enemy grants Stealth for 2 seconds. Breaking Stealth with an attack grants guaranteed [VALUE]% Critical Strikes chance",
+      "allowedTypes": ["Axe"]
+    },
+    {
+      "id": 3,
+      "name": "Skyhunter",
+      "description": "The first direct damage you deal to an enemy is a guaranteed Critical Strike. When you consume stacks of Precision casting a Skill, that Skill gains [VALUE]% increased Critical Strike Damage.",
+      "allowedTypes": ["Bow"]
+    },
+    {
+      "id": 4,
+      "name": "Eaglehorn",
+      "description": "Makes enemies Vulnerable for 3 seconds. Every 4th shot bounces off walls and deals [VALUE]% more damage.",
+      "allowedTypes": ["Bow"]
+    },
+    {
+      "id": 5,
+      "name": "Khanjar",
+      "description": "Hits with this weapon increase your Attack Speed by [VALUE]% for 4 seconds.",
+      "allowedTypes": ["Dagger"]
+    },
+    {
+      "id": 6,
+      "name": "Condemnation",
+      "description": "Your Core Skills deal [VALUE]% increased damage when spending 3 Combo Points. Your Basic Skills using this weapon have a 50% chance to generate 3 Combo Points.",
+      "allowedTypes": ["Dagger"]
+    },
+    {
+      "id": 7,
+      "name": "Fleshrender",
+      "description": "Casting a Defensive Skill deals [VALUE]% damage to Nearby Poisoned enemies, increased by 50% for every 100 Willpower you have.",
+      "allowedTypes": ["Mace"]
+    },
+    {
+      "id": 8,
+      "name": "Verathiel",
+      "description": "Basic Skills deal [VALUE]% increased damage but additionally cost 25 Primary Resource.",
+      "allowedTypes": ["Mace"]
+    },
+    {
+      "id": 9,
+      "name": "Black River",
+      "description": "Corpse Explosion consumes up to 4 additional Corpses around the initial Corpse, gaining [VALUE]% damage.",
+      "allowedTypes": ["Scythe"]
+    },
+    {
+      "id": 10,
+      "name": "Vehemen",
+      "description": "Casting an Ultimate Skill grants or amplifies its matching Primary Spirit Hall Bonus with [VALUE]% potency for 15 seconds.",
+      "allowedTypes": ["Scythe"]
+    },
+    {
+      "id": 11,
+      "name": "Endless Rage",
+      "description": "Every 3rd cast of Fireball launches 2 additional projectiles and deals [VALUE]% increased damage.",
+      "allowedTypes": ["Staff"]
+    },
+    {
+      "id": 12,
+      "name": "Lam Esen",
+      "description": "Your casts have a [VALUE]% chance to be attracted to enemies and last 300% longer.",
+      "allowedTypes": ["Staff"]
+    },
+    {
+      "id": 13,
+      "name": "Magnum Opus",
+      "description": "Skills using this weapon deal [VALUE]% increased damage per point of Fury you have, but you lose 10 Fury every second.",
+      "allowedTypes": ["Sword"]
+    },
+    {
+      "id": 14,
+      "name": "Azurewrath",
+      "description": "Up to a [VALUE]% chance to Freeze enemies for 3 seconds and deal 1000 Cold damage to them.",
+      "allowedTypes": ["Sword"]
+    },
+    {
+      "id": 15,
+      "name": "The Crone",
+      "description": "Storm Skill also casts Storm Strike at [VALUE]% normal damage.",
+      "allowedTypes": ["Two-Handed Axe"]
+    },
+    {
+      "id": 16,
+      "name": "Doombringer",
+      "description": "[VALUE[% chance to deal 900 Shadow damage to surrounding enemies and reduce their damage dealt by 20% for 5 second.",
+      "allowedTypes": ["Two-Handed Axe"]
+    },
+    {
+      "id": 17,
+      "name": "Hellhammer",
+      "description": "Ignites the ground Burning enemies for an additional [VALUE]% damage over 4 seconds.",
+      "allowedTypes": ["Two-Handed Mace"]
+    },
+    {
+      "id": 18,
+      "name": "Overkill",
+      "description": "Creates a shockwave, dealing [VALUE]% of its Base damage to enemies. Enemies who die to this effect also reset Death Blow’s Cooldown.",
+      "allowedTypes": ["Two-Handed Mace"]
+    },
+    {
+      "id": 19,
+      "name": "Bloodless Scream",
+      "description": "Your Darkness Skills Chill enemies for up to 100% and deal [VALUE]% increased damage to enemies.",
+      "allowedTypes": ["Two-Handed Scythe"]
+    },
+    {
+      "id": 20,
+      "name": "Ancestral Boost",
+      "description": "Your Darkness Skills have up to a [VALUE]% chance to generate 25 additional Essence against targets.",
+      "allowedTypes": ["Two-Handed Scythe"]
+    },
+    {
+      "id": 21,
+      "name": "Blood Harvest",
+      "description": "While using this weapon, damaging at least one enemy will create a blood pool that inflicts 100 Bleeding damage over 6 seconds. Enemies standing in the pool take [VALUE]% increased damage.",
+      "allowedTypes": ["Two-Handed Sword"]
+    },
+    {
+      "id": 22,
+      "name": "Sepazontec",
+      "description": "Your Basic Skills deal [VALUE]% increased damage and always use their 3rd attack. Every 3rd cast of a Basic Skill strikes three times.",
+      "allowedTypes": ["Two-Handed Sword"]
+    },
+    {
+      "id": 23,
+      "name": "Sepazontec",
+      "description": "While Channeling Incinerate, you periodically shoot embers that are attracted to enemies, each dealing [VALUE]% of Fire damage",
+      "allowedTypes": ["Wand"]
+    },
+    {
+      "id": 24,
+      "name": "The Oculus",
+      "description": "Gain the effect of the Teleport Enchantment for free. When you Evade using Teleport Enchantment your defense increases by [VALUE]%.",
+      "allowedTypes": ["Wand"]
+    }
+  ]
+}
