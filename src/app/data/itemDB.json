@@ -709,7 +709,7 @@
     {
       "id": 16,
       "name": "Doombringer",
-      "description": "[VALUE[% chance to deal 900 Shadow damage to surrounding enemies and reduce their damage dealt by 20% for 5 second.",
+      "description": "[VALUE]% chance to deal 900 Shadow damage to surrounding enemies and reduce their damage dealt by 20% for 5 second.",
       "allowedTypes": ["Two-Handed Axe"]
     },
     {

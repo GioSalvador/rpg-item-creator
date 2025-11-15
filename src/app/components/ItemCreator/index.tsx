@@ -464,7 +464,7 @@ export const ItemCreator = ({
               <label>Author</label>
               <input
                 type="text"
-                placeholder="Daelyr, Crane Tribe warrior"
+                placeholder="Gio, The Savior"
                 value={itemAuthor}
                 maxLength={36}
                 onChange={(e) => {

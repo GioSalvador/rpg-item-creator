@@ -261,7 +261,7 @@ export default function ItemCard({
                 <p
                   className={`${ptserifFontRegularItalic.className} pt-1 pl-1 text-[12px] 3xl:text-[18px]`}
                 >
-                  -{itemAuthor ? `${itemAuthor}` : `Daelyr, Crane Tribe warrior`} {}
+                  -{itemAuthor ? `${itemAuthor}` : `Gio, The Savior`} {}
                 </p>
               </div>
               <div className="flex w-full h-6 justify-center items-center mt-2 mb-2">
