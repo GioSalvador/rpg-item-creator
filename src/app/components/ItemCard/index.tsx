@@ -45,7 +45,6 @@ export default function ItemCard({
 }: ItemValues) {
   const cardRef = useRef<HTMLDivElement>(null);
 
-  // refs que persistem
   const currentX = useRef(0);
   const currentY = useRef(0);
   const targetX = useRef(0);
@@ -163,7 +162,7 @@ export default function ItemCard({
         onMouseLeave={handleMouseLeave}
       >
         <div
-          className="w-[280px] 3xl:w-90 h-min text-white border-solid p-4 px-[18px]" // Use h-min ou apenas remova as classes de altura fixa
+          className="w-[280px] 3xl:w-90 h-min text-white border-solid p-4 px-[18px]"
           style={{
             borderImageSource: `url(${borderImage})`,
             borderImageSlice: '96 fill',
