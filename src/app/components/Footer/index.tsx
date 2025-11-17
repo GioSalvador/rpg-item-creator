@@ -16,7 +16,7 @@ const Footer = () => {
           </a>
           <span className="text-red-800 3xl:text-[1.1rem]">|</span>
           <a
-            href="https://github.com/GioSalvador/rpg-card"
+            href="https://github.com/GioSalvador/rpg-item-creator"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-red-800 transition duration-300 3xl:text-[1.1rem]"

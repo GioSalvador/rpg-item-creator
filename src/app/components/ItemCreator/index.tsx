@@ -1,6 +1,5 @@
 'use client';
 
-import './style.css';
 import itemDB from '../../data/itemDB.json';
 import { ItemCreatorProps } from '@/app/types/item';
 import { PT_Serif, Cinzel_Decorative } from 'next/font/google';
@@ -44,25 +43,24 @@ export const ItemCreator = ({
 }: ItemCreatorProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const rarityRanges: Record<string, { min: number; max: number }> = {
-    Common: { min: 1, max: 99 },
-    Magic: { min: 100, max: 199 },
-    Mysthic: { min: 200, max: 299 },
-    Rare: { min: 300, max: 499 },
-    Unique: { min: 500, max: 999 },
-  };
   const getRarityFromPower = (power: number) => {
-    for (const [rarityName, range] of Object.entries(rarityRanges)) {
-      if (power >= range.min && power <= range.max) return rarityName;
+    for (const rarity of itemDB.rarities) {
+      const [min, max] = rarity.itemPowerRange;
+      if (power >= min && power <= max) {
+        return rarity.name;
+      }
     }
-    return 'Common';
+    return itemDB.rarities[0].name;
   };
 
   useEffect(() => {
-    const range = rarityRanges[itemRarity];
-    if (!range) return;
-    if (itemPower < range.min || itemPower > range.max) {
-      setItemPower(range.min);
+    const rarity = itemDB.rarities.find((r) => r.name === itemRarity);
+    if (!rarity) return;
+
+    const [min, max] = rarity.itemPowerRange;
+
+    if (itemPower < min || itemPower > max) {
+      setItemPower(min);
     }
   }, [itemRarity]);
 
@@ -184,18 +182,45 @@ export const ItemCreator = ({
   }
 
   return (
-    <div className={`creator-container ${ptserifFontRegular.className} mb-8 xl:mb-1 xl:mt-5`}>
+    <div className={`${ptserifFontRegular.className} mb-8 xl:mb-1 xl:mt-5`}>
       <div
         className="
-        creator-box 
+        relative
+        flex
+        items-center
+        justify-center
         w-80 
         xl:w-130 
         3xl:w-165 
         h-255 
         xl:h-215 
         3xl:h-300"
+        style={{
+          borderImageSource: 'url(/images/creator-border.png)',
+          borderImageSlice: '50 fill',
+          borderImageWidth: '40px',
+          borderImageRepeat: 'repeat',
+        }}
       >
-        <div className="creator-background w-75 h-250 xl:w-125 xl:h-210 3xl:w-160 3xl:h-295">
+        <div
+          className="
+            creator-background 
+            w-75 
+            h-250 
+            xl:w-125 
+            xl:h-210 
+            3xl:w-160 
+            3xl:h-295
+            text-white 
+            border-solid 
+            px-[18px] 
+            py-0"
+          style={{
+            borderImageSource: 'url(/images/creator-background.png)',
+            borderImageSlice: '1 fill',
+            borderImageRepeat: 'stretch',
+          }}
+        >
           <div className="flex justify-center items-center mt-2 mb-5 xl:mb-1 3xl:mb-4 3xl:mt-4">
             <h1
               className={`${cinzeldecorativeFontBold.className} text-[1.8rem] 3xl:text-[2.2rem] text-red-800`}
@@ -222,6 +247,7 @@ export const ItemCreator = ({
               <input
                 className="bg-black"
                 type="text"
+                maxLength={16}
                 placeholder="Fields of Crimson"
                 value={itemName}
                 onChange={(e) => {
@@ -299,7 +325,7 @@ export const ItemCreator = ({
                 <span
                   className={`${ptserifFontRegularItalic.className} ml-2 text-[0.7rem] text-gray-400`}
                 >
-                  ({rarityRanges[itemRarity]?.min ?? 1}-{rarityRanges[itemRarity]?.max ?? 99})
+                  ({rarityConfig?.itemPowerRange[0]}-{rarityConfig?.itemPowerRange[1]}){' '}
                 </span>
               </label>
               <input
@@ -309,16 +335,21 @@ export const ItemCreator = ({
                 max={999}
                 value={itemPower === 0 ? '' : itemPower}
                 onChange={(e) => {
-                  const raw = e.target.value;
+                  let raw = e.target.value;
+
                   if (raw === '') {
                     setItemPower(0);
                     return;
                   }
+
                   let value = Number(raw);
                   if (Number.isNaN(value)) return;
+
                   if (value < 1) value = 1;
                   if (value > 999) value = 999;
+
                   setItemPower(value);
+
                   const newRarity = getRarityFromPower(value);
                   if (newRarity !== itemRarity) {
                     setItemRarity(newRarity);
@@ -326,18 +357,19 @@ export const ItemCreator = ({
                 }}
                 onBlur={(e) => {
                   const raw = e.target.value;
-                  if (raw === '') {
-                    setItemPower(1);
-                    const newRarity = getRarityFromPower(1);
-                    setItemRarity(newRarity);
-                  } else {
-                    let value = Number(raw);
-                    if (value < 1) value = 1;
-                    if (value > 999) value = 999;
-                    setItemPower(value);
-                    const newRarity = getRarityFromPower(value);
-                    setItemRarity(newRarity);
+                  let value = Number(raw);
+
+                  if (raw === '' || Number.isNaN(value)) {
+                    value = 1;
                   }
+
+                  if (value < 1) value = 1;
+                  if (value > 999) value = 999;
+
+                  setItemPower(value);
+
+                  const newRarity = getRarityFromPower(value);
+                  setItemRarity(newRarity);
                 }}
                 onKeyDown={(e) => {
                   if (['e', 'E', '+', '-'].includes(e.key)) {
@@ -466,7 +498,7 @@ export const ItemCreator = ({
                 type="text"
                 placeholder="Gio, The Savior"
                 value={itemAuthor}
-                maxLength={36}
+                maxLength={35}
                 onChange={(e) => {
                   setItemAuthor(e.target.value);
                 }}
