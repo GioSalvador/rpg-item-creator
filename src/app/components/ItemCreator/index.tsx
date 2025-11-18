@@ -530,7 +530,7 @@ export const ItemCreator = ({
               <label>Impactful Quote</label>
               <textarea
                 className="overflow-auto scrollbar-hide resize-none"
-                placeholder={`"Love's gonna get you killed but pride’s gonna be the death of you and me."`}
+                placeholder={`"Love's gonna get you killed, but pride’s gonna be the death of you and me."`}
                 value={itemQuote}
                 maxLength={190}
                 onChange={(e) => {

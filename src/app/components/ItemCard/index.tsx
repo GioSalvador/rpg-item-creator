@@ -263,7 +263,7 @@ export default function ItemCard({
                 >
                   {itemQuote
                     ? `"${itemQuote}."`
-                    : `"Love's gonna get you killed but pride’s gonna be the death of you and me."`}
+                    : `"Love's gonna get you killed, but pride’s gonna be the death of you and me."`}
                 </p>
 
                 <p
