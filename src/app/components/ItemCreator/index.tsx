@@ -217,7 +217,7 @@ export const ItemCreator = ({
                 className="bg-black"
                 type="text"
                 maxLength={16}
-                placeholder="Fields of Crimson"
+                placeholder="The Death of Pride"
                 value={itemName}
                 onChange={(e) => {
                   setItemName(e.target.value);
@@ -530,7 +530,7 @@ export const ItemCreator = ({
               <label>Impactful Quote</label>
               <textarea
                 className="overflow-auto scrollbar-hide resize-none"
-                placeholder={`"We've been fighting these flesh-eaters for so long, been soaked in so much blood, that after a while it's difficult to tell what side you're truly on."`}
+                placeholder={`"Love's gonna get you killed but pride’s gonna be the death of you and me."`}
                 value={itemQuote}
                 maxLength={190}
                 onChange={(e) => {
@@ -541,7 +541,7 @@ export const ItemCreator = ({
               <label>Author</label>
               <input
                 type="text"
-                placeholder="Gio, The Savior"
+                placeholder="K, The Dot"
                 value={itemAuthor}
                 maxLength={35}
                 onChange={(e) => {

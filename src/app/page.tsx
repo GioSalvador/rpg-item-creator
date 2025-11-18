@@ -5,6 +5,7 @@ import ItemCard from './components/ItemCard';
 import Footer from './components/Footer';
 import { useState } from 'react';
 import { AffixValue, SuffixValue } from './types/item';
+import { useMobileAutoScroll } from './hooks/useMobileAutoScroll';
 
 export default function Home() {
   const [itemRarity, setItemRarity] = useState('Common');
@@ -24,6 +25,7 @@ export default function Home() {
   const [itemQuote, setItemQuote] = useState('');
   const [itemAuthor, setItemAuthor] = useState('');
   const [itemValue, setItemValue] = useState(1);
+  const { showBackToTop } = useMobileAutoScroll(itemRarity);
 
   return (
     <>

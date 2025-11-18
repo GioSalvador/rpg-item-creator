@@ -176,7 +176,7 @@ export default function ItemCard({
                 className={`${cinzeldecorativeFontBold.className} text-[#db8114] pt-1 pl-1 text-[20px] 3xl:text-[30px] w-30`}
                 style={{ color: textColor, wordBreak: 'break-word', overflow: 'hidden' }}
               >
-                {itemName || 'Fields of Crimson'}
+                {itemName || 'The Death of Pride'}
               </h2>
               <p
                 className={`${cinzeldecorativeFontRegular.className} text-[#db8114] pt-1 pl-1 text-[12px] 3xl:text-[14px]`}
@@ -262,15 +262,14 @@ export default function ItemCard({
                   }}
                 >
                   {itemQuote
-                    ? `"${itemQuote}"`
-                    : `"We've been fighting these flesh-eaters for so long, been soaked in so much blood,
-                    that after a while it's difficult to tell what side you're truly on."`}
+                    ? `"${itemQuote}."`
+                    : `"Love's gonna get you killed but pride’s gonna be the death of you and me."`}
                 </p>
 
                 <p
                   className={`${ptserifFontRegularItalic.className} pt-1 pl-1 text-[12px] 3xl:text-[18px]`}
                 >
-                  -{itemAuthor ? `${itemAuthor}` : `Gio, The Savior`} {}
+                  -{itemAuthor ? `${itemAuthor}` : `K, The Dot`} {}
                 </p>
               </div>
               <div className="flex w-full h-6 justify-center items-center mt-2 mb-2">
