@@ -66,7 +66,6 @@ export const ItemCreator = ({
 
   const rarityConfig = itemDB.rarities.find((r) => r.name === itemRarity);
   const maxAffixesAllowed = rarityConfig?.maxAffixes ?? 2;
-  const [minAffix, maxAffix] = rarityConfig?.affixValueRange ?? [1, 50];
   const affixOptions = itemDB.affixes.filter((a: any) => a.allowedTypes.includes(itemType));
 
   const handleAffixNameChange = (index: number, newName: string) => {
@@ -84,73 +83,6 @@ export const ItemCreator = ({
       return copy;
     });
   };
-
-  const usingUnique = !!rarityConfig?.uniqueSuffixAllowed;
-  const suffixAllowed = !!rarityConfig?.suffixesAllowed || usingUnique;
-  const suffixValueRange = rarityConfig?.suffixValueRange ?? [0, 0];
-
-  const baseSuffixes = usingUnique ? itemDB.uniqueSuffixes : itemDB.suffixes;
-  const availableSuffixes = (baseSuffixes ?? []).filter((s: any) =>
-    s.allowedTypes?.includes(itemType)
-  );
-  useEffect(() => {
-    if (!suffixAllowed) {
-      setSuffix(null);
-      return;
-    }
-
-    const first = availableSuffixes[0];
-
-    const invalidCurrent =
-      !suffix || !suffix.name || !availableSuffixes.some((s: any) => s.name === suffix.name);
-
-    if (invalidCurrent) {
-      if (first) {
-        setSuffix({
-          name: first.name,
-          value: minSuffix,
-          description: first.description ?? '',
-        });
-      }
-      return;
-    }
-
-    if (suffix.value < minSuffix) {
-      const found = availableSuffixes.find((s: any) => s.name === suffix.name);
-      setSuffix({
-        name: suffix.name,
-        value: minSuffix,
-        description: found?.description ?? '',
-      });
-    }
-  }, [itemRarity, itemType]);
-
-  const handleSuffixSelect = (name: string) => {
-    if (!name) {
-      setSuffix(null);
-      return;
-    }
-
-    const source = usingUnique ? itemDB.uniqueSuffixes : itemDB.suffixes;
-    const found = source.find((s: any) => s.name === name);
-
-    if (!found) {
-      setSuffix(null);
-      return;
-    }
-
-    setSuffix({
-      name: found.name,
-      value: suffix?.value ?? suffixValueRange[0],
-      description: found.description ?? '',
-    });
-  };
-
-  const handleSuffixValueChange = (val: number) => {
-    setSuffix((prev) => (prev ? { ...prev, value: val } : null));
-  };
-
-  const [minSuffix, maxSuffix] = rarityConfig?.suffixValueRange ?? [1, 50];
 
   const typeData = itemDB.itemType.find(
     (t) => t.name.toLowerCase() === (itemType || '').toLowerCase()
@@ -230,20 +162,46 @@ export const ItemCreator = ({
           </div>
           <div className="">
             <form className="flex flex-col gap-2 xl:text-[0.8rem] 3xl:text-[1.2rem] " action="">
-              <label>Item Rarity</label>
+              <label>Rarity</label>
               <select
                 className="bg-black cursor-pointer"
                 value={itemRarity}
-                onChange={(e) => setItemRarity(e.target.value)}
+                onChange={(e) => {
+                  const newRarity = e.target.value;
+                  setItemRarity(newRarity);
+
+                  const rarityConfig = itemDB.rarities.find((r) => r.name === newRarity);
+                  if (!rarityConfig) return;
+
+                  setAffixes((prev) => {
+                    const max = rarityConfig.maxAffixes ?? 0;
+                    return prev.slice(0, max).map((a) => ({ ...a }));
+                  });
+
+                  if (!rarityConfig.suffixesAllowed) {
+                    setSuffix(null);
+                  } else {
+                    setSuffix((prev) => {
+                      if (!prev) return null;
+                      const baseSuffixes = rarityConfig.uniqueSuffixAllowed
+                        ? itemDB.uniqueSuffixes
+                        : itemDB.suffixes;
+                      const valid = baseSuffixes.find((s: any) => s.name === prev.name);
+                      return valid
+                        ? prev
+                        : { name: '', value: valid?.valueRange ? valid.valueRange[0] : 0 };
+                    });
+                  }
+                }}
               >
                 {itemDB.rarities.map((r) => (
-                  <option key={r.name} value={r.name}>
+                  <option key={r.name} value={r.name} style={{ color: r.color }}>
                     {r.name}
                   </option>
                 ))}
               </select>
 
-              <label>Item Name</label>
+              <label>Name</label>
               <input
                 className="bg-black"
                 type="text"
@@ -255,7 +213,7 @@ export const ItemCreator = ({
                 }}
               />
 
-              <label>Item Type</label>
+              <label>Type</label>
               <select
                 className="bg-black cursor-pointer"
                 value={itemType}
@@ -268,7 +226,7 @@ export const ItemCreator = ({
                 ))}
               </select>
 
-              <label>Item Image</label>
+              <label>Image</label>
               <div className="flex flex-col gap-2">
                 <button
                   className="  bg-black cursor-pointer h-6 text-[0.8rem]"
@@ -321,7 +279,7 @@ export const ItemCreator = ({
               )}
 
               <label>
-                Item Power
+                Power
                 <span
                   className={`${ptserifFontRegularItalic.className} ml-2 text-[0.7rem] text-gray-400`}
                 >
@@ -377,10 +335,15 @@ export const ItemCreator = ({
                   }
                 }}
               />
+              {/* {AFFIX} */}
               <>
                 {Array.from({ length: 6 }).map((_, i) => {
                   const disabled = i + 1 > maxAffixesAllowed;
                   const slot = affixes[i] ?? { name: '', value: 0 };
+                  const selectedAffix: Affix | undefined = itemDB.affixes.find(
+                    (a: Affix) => a.name === slot.name
+                  );
+                  const [minAffix, maxAffix] = selectedAffix?.valueRange ?? [1, 50];
 
                   return (
                     <div key={i} className={disabled ? 'opacity-30 pointer-events-none' : ''}>
@@ -390,7 +353,7 @@ export const ItemCreator = ({
                           <span
                             className={`${ptserifFontRegularItalic.className} ml-2 text-[0.7rem] text-gray-400`}
                           >
-                            (1-50)
+                            ({minAffix}-{maxAffix})
                           </span>
                         </label>
                       </div>
@@ -399,17 +362,35 @@ export const ItemCreator = ({
                           type="number"
                           min={minAffix}
                           max={maxAffix}
-                          placeholder={`${minAffix}-${maxAffix}`}
+                          placeholder={'0%'}
                           className="w-10 xl:w-12"
-                          value={slot.value || ''}
+                          value={slot.value === 0 ? '' : slot.value}
                           onChange={(e) => {
-                            let value = Number(e.target.value);
-
-                            if (Number.isNaN(value)) value = minAffix;
-                            if (value < minAffix) value = minAffix;
+                            const raw = e.target.value.replace(/\D/g, '').slice(0, 3); // limita tamanho razoável
+                            if (raw === '') {
+                              handleAffixValueChange(i, 0);
+                              return;
+                            }
+                            let value = Number(raw);
+                            if (Number.isNaN(value)) {
+                              handleAffixValueChange(i, 0);
+                              return;
+                            }
                             if (value > maxAffix) value = maxAffix;
-
                             handleAffixValueChange(i, value);
+                          }}
+                          onFocus={(e) => {
+                            if (slot.value === minAffix) {
+                              e.currentTarget.value = '';
+                              handleAffixValueChange(i, 0);
+                            }
+                          }}
+                          onBlur={(e) => {
+                            const raw = e.target.value.replace(/\D/g, '');
+                            let val = Number(raw);
+                            if (Number.isNaN(val) || val < minAffix) val = minAffix;
+                            if (val > maxAffix) val = maxAffix;
+                            handleAffixValueChange(i, val);
                           }}
                           onKeyDown={(e) => {
                             if (['e', 'E', '+', '-', '.'].includes(e.key)) {
@@ -418,14 +399,20 @@ export const ItemCreator = ({
                           }}
                           disabled={disabled}
                         />
+
                         <select
                           className="bg-black w-55 xl:w-full"
                           value={slot.name}
-                          onChange={(e) => handleAffixNameChange(i, e.target.value)}
+                          onChange={(e) => {
+                            const newName = e.target.value;
+                            const newAffix = itemDB.affixes.find((a) => a.name === newName);
+                            const [newMin, newMax] = newAffix?.valueRange ?? [1, 50];
+                            handleAffixNameChange(i, newName);
+                            handleAffixValueChange(i, newMin);
+                          }}
                           disabled={disabled}
                         >
                           <option value="">None</option>
-
                           {affixOptions
                             .filter((a: any) => {
                               const alreadyUsed = affixes.some(
@@ -444,43 +431,90 @@ export const ItemCreator = ({
                   );
                 })}
               </>
-              <div className={suffixAllowed ? '' : 'opacity-30 pointer-events-none'}>
-                <div>
-                  <label>
-                    Suffix
-                    <span
-                      className={`${ptserifFontRegularItalic.className} ml-2 text-[0.7rem] text-gray-400`}
-                    >
-                      ({minSuffix}-{maxSuffix})
-                    </span>
-                  </label>{' '}
-                </div>
-                <div className="flex">
-                  <input
-                    type="number"
-                    min={suffixValueRange[0]}
-                    max={suffixValueRange[1]}
-                    placeholder={`${suffixValueRange[0]}-${suffixValueRange[1]}`}
-                    className="w-10 xl:w-12"
-                    value={suffix?.value ?? ''}
-                    onChange={(e) => handleSuffixValueChange(Number(e.target.value || 0))}
-                    disabled={!suffixAllowed}
-                  />
-                  <select
-                    className="bg-black w-55 xl:w-full"
-                    value={suffix?.name ?? ''}
-                    onChange={(e) => handleSuffixSelect(e.target.value)}
-                    disabled={!suffixAllowed}
-                  >
-                    <option value="">None</option>
-                    {availableSuffixes.map((s: any) => (
-                      <option key={s.id} value={s.name}>
-                        {s.name}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
+              {/* {SUFFIX} */}
+              <>
+                {(() => {
+                  const baseSuffixes = rarityConfig?.uniqueSuffixAllowed
+                    ? itemDB.uniqueSuffixes
+                    : itemDB.suffixes;
+
+                  const slot = suffix ?? { name: '', value: 0 };
+                  const selectedSuffix = baseSuffixes.find((s) => s.name === slot.name);
+                  const [minSuffix, maxSuffix] = selectedSuffix?.valueRange ?? [1, 50];
+                  const disabled = !rarityConfig?.suffixesAllowed;
+
+                  return (
+                    <div className={disabled ? 'opacity-30 pointer-events-none' : ''}>
+                      <div>
+                        <label>
+                          Suffix
+                          <span
+                            className={`${ptserifFontRegularItalic.className} ml-2 text-[0.7rem] text-gray-400`}
+                          >
+                            ({minSuffix}-{maxSuffix})
+                          </span>
+                        </label>
+                      </div>
+                      <div className="flex">
+                        <input
+                          type="number"
+                          className="w-10 xl:w-12"
+                          min={minSuffix}
+                          max={maxSuffix}
+                          placeholder={'0%'}
+                          value={slot.value === 0 ? '' : slot.value}
+                          onChange={(e) => {
+                            // Permitir digitação natural: só limpar não-dígitos e limitar tamanho
+                            const raw = e.target.value.replace(/\D/g, '').slice(0, 3);
+                            if (raw === '') {
+                              setSuffix((prev) => (prev ? { ...prev, value: 0 } : null));
+                              return;
+                            }
+                            setSuffix((prev) => (prev ? { ...prev, value: Number(raw) } : null));
+                          }}
+                          onFocus={(e) => {
+                            // limpa visualmente se está no valor mínimo
+                            if (slot.value === minSuffix) {
+                              e.currentTarget.value = '';
+                              setSuffix((prev) => (prev ? { ...prev, value: 0 } : null));
+                            }
+                          }}
+                          onBlur={(e) => {
+                            // aqui sim validamos o valor real
+                            let value = Number(e.target.value);
+                            if (Number.isNaN(value) || value < minSuffix) value = minSuffix;
+                            if (value > maxSuffix) value = maxSuffix;
+                            setSuffix((prev) => (prev ? { ...prev, value } : null));
+                          }}
+                          onKeyDown={(e) => {
+                            if (['e', 'E', '+', '-', '.'].includes(e.key)) e.preventDefault();
+                          }}
+                          disabled={disabled}
+                        />
+                        <select
+                          className="bg-black w-55 xl:w-full"
+                          value={slot.name}
+                          onChange={(e) => {
+                            const selected = baseSuffixes.find((s) => s.name === e.target.value);
+                            if (!selected) return;
+                            setSuffix({ name: selected.name, value: selected.valueRange[0] });
+                          }}
+                          disabled={disabled}
+                        >
+                          <option value="">None</option>
+                          {baseSuffixes
+                            .filter((s) => s.allowedTypes.includes(itemType))
+                            .map((s) => (
+                              <option key={s.name} value={s.name}>
+                                {s.name}
+                              </option>
+                            ))}
+                        </select>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </>
 
               <label>Impactful Quote</label>
               <textarea
