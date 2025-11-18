@@ -1,7 +1,7 @@
 'use client';
 
-import itemDB from '../../data/itemDB.json';
-import { ItemCreatorProps } from '@/app/types/item';
+import rawItemDB from '../../data/itemDB.json';
+import { ItemCreatorProps, Affix, Suffix, AffixValue, SuffixValue } from '@/app/types/item';
 import { PT_Serif, Cinzel_Decorative } from 'next/font/google';
 import { useState, useEffect } from 'react';
 
@@ -18,6 +18,13 @@ const ptserifFontRegularItalic = PT_Serif({
   weight: '400',
   style: 'italic',
 });
+
+const itemDB = {
+  ...rawItemDB,
+  affixes: rawItemDB.affixes as Affix[],
+  suffixes: rawItemDB.suffixes as unknown as Suffix[],
+  uniqueSuffixes: rawItemDB.uniqueSuffixes as unknown as Suffix[],
+};
 
 export const ItemCreator = ({
   itemRarity,
@@ -183,13 +190,17 @@ export const ItemCreator = ({
                   } else {
                     setSuffix((prev) => {
                       if (!prev) return null;
-                      const baseSuffixes = rarityConfig.uniqueSuffixAllowed
+                      const baseSuffixes: Suffix[] = rarityConfig.uniqueSuffixAllowed
                         ? itemDB.uniqueSuffixes
                         : itemDB.suffixes;
-                      const valid = baseSuffixes.find((s: any) => s.name === prev.name);
-                      return valid
-                        ? prev
-                        : { name: '', value: valid?.valueRange ? valid.valueRange[0] : 0 };
+                      const valid = baseSuffixes.find((s) => s.name === prev.name);
+                      if (valid) return prev;
+                      const first = baseSuffixes[0];
+                      if (!first) return null;
+                      return {
+                        name: first.name,
+                        value: first.valueRange[0],
+                      };
                     });
                   }
                 }}
@@ -366,7 +377,7 @@ export const ItemCreator = ({
                           className="w-10 xl:w-12"
                           value={slot.value === 0 ? '' : slot.value}
                           onChange={(e) => {
-                            const raw = e.target.value.replace(/\D/g, '').slice(0, 3); // limita tamanho razoável
+                            const raw = e.target.value.replace(/\D/g, '').slice(0, 3);
                             if (raw === '') {
                               handleAffixValueChange(i, 0);
                               return;
