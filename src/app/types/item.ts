@@ -1,3 +1,16 @@
+export interface Affix {
+  id: number;
+  name: string;
+  allowedTypes: string[];
+  valueRange: [number, number];
+}
+
+export interface Suffix {
+  name: string;
+  allowedTypes: string[];
+  valueRange: [number, number];
+  description?: string;
+}
 export interface AffixValue {
   name: string;
   value: number;
@@ -15,7 +28,7 @@ export interface ItemValues {
   itemType: string;
   itemPower: number;
   selectedImage?: string;
-  affixes: AffixValue[]; // length 6
+  affixes: AffixValue[];
   suffix?: SuffixValue | null;
   itemQuote: string;
   itemAuthor: string;

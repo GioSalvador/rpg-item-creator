@@ -7,9 +7,7 @@
       "color": "#ffffff",
       "itemPowerRange": [1, 99],
       "maxAffixes": 2,
-      "affixValueRange": [1, 50],
       "suffixesAllowed": false,
-      "suffixValueRange": null,
       "uniqueSuffixAllowed": false
     },
     {
@@ -19,9 +17,7 @@
       "color": "#3366ff",
       "itemPowerRange": [100, 199],
       "maxAffixes": 3,
-      "affixValueRange": [1, 50],
       "suffixesAllowed": false,
-      "suffixValueRange": null,
       "uniqueSuffixAllowed": false
     },
     {
@@ -31,9 +27,7 @@
       "color": "#cda1d8",
       "itemPowerRange": [200, 299],
       "maxAffixes": 4,
-      "affixValueRange": [1, 50],
       "suffixesAllowed": true,
-      "suffixValueRange": [50, 100],
       "uniqueSuffixAllowed": false
     },
     {
@@ -43,9 +37,7 @@
       "color": "#ffff00",
       "itemPowerRange": [300, 499],
       "maxAffixes": 5,
-      "affixValueRange": [1, 50],
       "suffixesAllowed": true,
-      "suffixValueRange": [50, 100],
       "uniqueSuffixAllowed": false
     },
     {
@@ -55,9 +47,7 @@
       "color": "#db8114",
       "itemPowerRange": [500, 999],
       "maxAffixes": 6,
-      "affixValueRange": [1, 50],
       "suffixesAllowed": true,
-      "suffixValueRange": [100, 200],
       "uniqueSuffixAllowed": true
     }
   ],
@@ -154,6 +144,7 @@
     {
       "id": 1,
       "name": "Damage to Bleeding Enemies",
+      "valueRange": [3, 18],
       "allowedTypes": [
         "Axe",
         "Bow",
@@ -172,6 +163,7 @@
     {
       "id": 2,
       "name": "Damage to Close Enemies",
+      "valueRange": [3, 18],
       "allowedTypes": [
         "Axe",
         "Bow",
@@ -190,6 +182,7 @@
     {
       "id": 3,
       "name": "Cooldown Reduction",
+      "valueRange": [1, 5],
       "allowedTypes": [
         "Axe",
         "Bow",
@@ -208,6 +201,7 @@
     {
       "id": 4,
       "name": "Chance for Storm Strike",
+      "valueRange": [3, 10],
       "allowedTypes": [
         "Axe",
         "Bow",
@@ -226,6 +220,7 @@
     {
       "id": 5,
       "name": "Lucky Hit Chance",
+      "valueRange": [3, 10],
       "allowedTypes": [
         "Axe",
         "Bow",
@@ -244,6 +239,7 @@
     {
       "id": 6,
       "name": "Freeze Duration",
+      "valueRange": [3, 15],
       "allowedTypes": [
         "Axe",
         "Bow",
@@ -262,6 +258,7 @@
     {
       "id": 7,
       "name": "Fire Duration",
+      "valueRange": [3, 15],
       "allowedTypes": [
         "Axe",
         "Bow",
@@ -280,6 +277,7 @@
     {
       "id": 8,
       "name": "Damage Reduction",
+      "valueRange": [2, 8],
       "allowedTypes": [
         "Axe",
         "Bow",
@@ -298,6 +296,7 @@
     {
       "id": 9,
       "name": "Chance to Heal",
+      "valueRange": [3, 10],
       "allowedTypes": [
         "Axe",
         "Bow",
@@ -316,6 +315,7 @@
     {
       "id": 10,
       "name": "Attack Speed",
+      "valueRange": [3, 15],
       "allowedTypes": [
         "Axe",
         "Bow",
@@ -334,6 +334,7 @@
     {
       "id": 11,
       "name": "Critical Strike Damage",
+      "valueRange": [3, 15],
       "allowedTypes": [
         "Axe",
         "Bow",
@@ -352,6 +353,7 @@
     {
       "id": 12,
       "name": "Movement Speed",
+      "valueRange": [3, 10],
       "allowedTypes": [
         "Axe",
         "Bow",
@@ -370,6 +372,7 @@
     {
       "id": 13,
       "name": "Critical Chance",
+      "valueRange": [3, 10],
       "allowedTypes": [
         "Axe",
         "Bow",
@@ -388,6 +391,7 @@
     {
       "id": 14,
       "name": "Lightning Damage",
+      "valueRange": [3, 15],
       "allowedTypes": [
         "Axe",
         "Bow",
@@ -406,6 +410,7 @@
     {
       "id": 15,
       "name": "Poison Damage",
+      "valueRange": [3, 15],
       "allowedTypes": [
         "Axe",
         "Bow",
@@ -424,6 +429,7 @@
     {
       "id": 16,
       "name": "Elemental Damage",
+      "valueRange": [3, 15],
       "allowedTypes": [
         "Axe",
         "Dagger",
@@ -439,6 +445,7 @@
     {
       "id": 17,
       "name": "Physical Damage",
+      "valueRange": [3, 15],
       "allowedTypes": [
         "Axe",
         "Bow",
@@ -457,31 +464,37 @@
     {
       "id": 18,
       "name": "Chance for projectiles to cast twice",
+      "valueRange": [3, 10],
       "allowedTypes": ["Bow"]
     },
     {
       "id": 19,
       "name": "Penetrating Shot",
+      "valueRange": [3, 15],
       "allowedTypes": ["Bow"]
     },
     {
       "id": 20,
       "name": "Chance to Cast an additional Elemental Skill",
+      "valueRange": [3, 10],
       "allowedTypes": ["Staff", "Wand"]
     },
     {
       "id": 21,
       "name": "Chance to cast an additional Elemental Skill",
+      "valueRange": [3, 10],
       "allowedTypes": ["Staff", "Wand"]
     },
     {
       "id": 22,
       "name": "Chance to chains to +2 targets",
+      "valueRange": [3, 15],
       "allowedTypes": ["Staff", "Wand"]
     },
     {
       "id": 23,
       "name": "Chance to Incinerate",
+      "valueRange": [3, 10],
       "allowedTypes": ["Staff", "Wand"]
     }
   ],
@@ -490,6 +503,7 @@
       "id": 1,
       "name": "Alacrity",
       "description": "Your Skills Cooldown [VALUE]% faster while moving.",
+      "valueRange": [1, 5],
       "allowedTypes": [
         "Axe",
         "Bow",
@@ -509,6 +523,7 @@
       "id": 2,
       "name": "Anemia",
       "description": "Damaging Bleeding or Vulnerable enemies has a [VALUE]% chance to Stun them for 2 seconds.",
+      "valueRange": [10, 20],
       "allowedTypes": [
         "Axe",
         "Bow",
@@ -528,6 +543,7 @@
       "id": 3,
       "name": "Avoidance",
       "description": "Whenever an enemy hits you, your Dodge Chance against that enemy increases by [VALUE]. Successfully Dodging resets this bonus.",
+      "valueRange": [15, 30],
       "allowedTypes": [
         "Axe",
         "Bow",
@@ -547,6 +563,7 @@
       "id": 4,
       "name": "Berserk Ripping",
       "description": "Whenever you deal direct damage while Berserking, inflict [VALUE]% of the base damage dealt as additional Bleeding damage over 5 seconds.",
+      "valueRange": [15, 30],
       "allowedTypes": [
         "Axe",
         "Mace",
@@ -560,6 +577,7 @@
       "id": 5,
       "name": "Poisonous Clouds",
       "description": "When entering Stealth, create a cloud that deals [VALUE]% Poison damage over 6 seconds.",
+      "valueRange": [15, 30],
       "allowedTypes": [
         "Axe",
         "Bow",
@@ -579,12 +597,14 @@
       "id": 6,
       "name": "Biting Cold",
       "description": "When you Freeze an enemy there is a [VALUE]% chance they become Vulnerable for 3 seconds.",
+      "valueRange": [15, 30],
       "allowedTypes": ["Staff", "Wand"]
     },
     {
       "id": 7,
       "name": "Binding Morass",
       "description": "Dealing indirect damage to an enemy progressively Slows them by [VALUE]% for 3 seconds. You deal 20% increased damage to Slowed Enemies.",
+      "valueRange": [15, 30],
       "allowedTypes": [
         "Axe",
         "Bow",
@@ -604,165 +624,191 @@
       "id": 8,
       "name": "Charged Flash",
       "description": "After Charged Bolts hits enemies 50 times, your next 3 casts of Charged Bolts become waves that pierce and deal [VALUE]% Critical Shock Damage.",
+      "valueRange": [10, 25],
       "allowedTypes": ["Bow"]
     },
     {
       "id": 9,
       "name": "Conflagration",
       "description": "While channeling Incinerate, your Burning damage is increased by [VALUE]%. Enemies hit by Incinerate explode.",
+      "valueRange": [15, 30],
       "allowedTypes": ["Staff", "Wand"]
     },
     {
       "id": 10,
       "name": "Control",
       "description": "You deal [VALUE]% more damage to Immobilized, Stunned, or Frozen enemies.",
+      "valueRange": [10, 15],
       "allowedTypes": ["Staff", "Wand"]
     }
   ],
-
   "uniqueSuffixes": [
     {
       "id": 1,
       "name": "Cleaver",
       "description": "Critically Striking an enemy has up to a 100% chance to Fear and Slow them by [VALUE]% for 4 seconds.",
+      "valueRange": [25, 50],
       "allowedTypes": ["Axe"]
     },
     {
       "id": 2,
       "name": "Shred",
       "description": "Killing an enemy grants Stealth for 2 seconds. Breaking Stealth with an attack grants guaranteed [VALUE]% Critical Strikes chance",
+      "valueRange": [25, 50],
       "allowedTypes": ["Axe"]
     },
     {
       "id": 3,
       "name": "Skyhunter",
       "description": "The first direct damage you deal to an enemy is a guaranteed Critical Strike. When you consume stacks of Precision casting a Skill, that Skill gains [VALUE]% increased Critical Strike Damage.",
+      "valueRange": [25, 50],
       "allowedTypes": ["Bow"]
     },
     {
       "id": 4,
       "name": "Eaglehorn",
       "description": "Makes enemies Vulnerable for 3 seconds. Every 4th shot bounces off walls and deals [VALUE]% more damage.",
+      "valueRange": [25, 50],
       "allowedTypes": ["Bow"]
     },
     {
       "id": 5,
       "name": "Khanjar",
       "description": "Hits with this weapon increase your Attack Speed by [VALUE]% for 4 seconds.",
+      "valueRange": [25, 50],
       "allowedTypes": ["Dagger"]
     },
     {
       "id": 6,
       "name": "Condemnation",
       "description": "Your Core Skills deal [VALUE]% increased damage when spending 3 Combo Points. Your Basic Skills using this weapon have a 50% chance to generate 3 Combo Points.",
+      "valueRange": [25, 50],
       "allowedTypes": ["Dagger"]
     },
     {
       "id": 7,
       "name": "Fleshrender",
       "description": "Casting a Defensive Skill deals [VALUE]% damage to Nearby Poisoned enemies, increased by 50% for every 100 Willpower you have.",
+      "valueRange": [25, 50],
       "allowedTypes": ["Mace"]
     },
     {
       "id": 8,
       "name": "Verathiel",
       "description": "Basic Skills deal [VALUE]% increased damage but additionally cost 25 Primary Resource.",
+      "valueRange": [25, 50],
       "allowedTypes": ["Mace"]
     },
     {
       "id": 9,
       "name": "Black River",
       "description": "Corpse Explosion consumes up to 4 additional Corpses around the initial Corpse, gaining [VALUE]% damage.",
+      "valueRange": [25, 50],
       "allowedTypes": ["Scythe"]
     },
     {
       "id": 10,
       "name": "Vehemen",
       "description": "Casting an Ultimate Skill grants or amplifies its matching Primary Spirit Hall Bonus with [VALUE]% potency for 15 seconds.",
+      "valueRange": [25, 50],
       "allowedTypes": ["Scythe"]
     },
     {
       "id": 11,
       "name": "Endless Rage",
       "description": "Every 3rd cast of Fireball launches 2 additional projectiles and deals [VALUE]% increased damage.",
+      "valueRange": [25, 50],
       "allowedTypes": ["Staff"]
     },
     {
       "id": 12,
       "name": "Lam Esen",
       "description": "Your casts have a [VALUE]% chance to be attracted to enemies and last 300% longer.",
+      "valueRange": [25, 50],
       "allowedTypes": ["Staff"]
     },
     {
       "id": 13,
       "name": "Magnum Opus",
       "description": "Skills using this weapon deal [VALUE]% increased damage per point of Fury you have, but you lose 10 Fury every second.",
+      "valueRange": [25, 50],
       "allowedTypes": ["Sword"]
     },
     {
       "id": 14,
       "name": "Azurewrath",
       "description": "Up to a [VALUE]% chance to Freeze enemies for 3 seconds and deal 1000 Cold damage to them.",
+      "valueRange": [25, 50],
       "allowedTypes": ["Sword"]
     },
     {
       "id": 15,
       "name": "The Crone",
       "description": "Storm Skill also casts Storm Strike at [VALUE]% normal damage.",
+      "valueRange": [25, 50],
       "allowedTypes": ["Two-Handed Axe"]
     },
     {
       "id": 16,
       "name": "Doombringer",
       "description": "[VALUE]% chance to deal 900 Shadow damage to surrounding enemies and reduce their damage dealt by 20% for 5 second.",
+      "valueRange": [25, 50],
       "allowedTypes": ["Two-Handed Axe"]
     },
     {
       "id": 17,
       "name": "Hellhammer",
       "description": "Ignites the ground Burning enemies for an additional [VALUE]% damage over 4 seconds.",
+      "valueRange": [25, 50],
       "allowedTypes": ["Two-Handed Mace"]
     },
     {
       "id": 18,
       "name": "Overkill",
       "description": "Creates a shockwave, dealing [VALUE]% of its Base damage to enemies. Enemies who die to this effect also reset Death Blow’s Cooldown.",
+      "valueRange": [25, 50],
       "allowedTypes": ["Two-Handed Mace"]
     },
     {
       "id": 19,
       "name": "Bloodless Scream",
       "description": "Your Darkness Skills Chill enemies for up to 100% and deal [VALUE]% increased damage to enemies.",
+      "valueRange": [25, 50],
       "allowedTypes": ["Two-Handed Scythe"]
     },
     {
       "id": 20,
       "name": "Ancestral Boost",
       "description": "Your Darkness Skills have up to a [VALUE]% chance to generate 25 additional Essence against targets.",
+      "valueRange": [25, 50],
       "allowedTypes": ["Two-Handed Scythe"]
     },
     {
       "id": 21,
       "name": "Blood Harvest",
       "description": "While using this weapon, damaging at least one enemy will create a blood pool that inflicts 100 Bleeding damage over 6 seconds. Enemies standing in the pool take [VALUE]% increased damage.",
+      "valueRange": [25, 50],
       "allowedTypes": ["Two-Handed Sword"]
     },
     {
       "id": 22,
       "name": "Sepazontec",
       "description": "Your Basic Skills deal [VALUE]% increased damage and always use their 3rd attack. Every 3rd cast of a Basic Skill strikes three times.",
+      "valueRange": [25, 50],
       "allowedTypes": ["Two-Handed Sword"]
     },
     {
       "id": 23,
       "name": "Sepazontec",
       "description": "While Channeling Incinerate, you periodically shoot embers that are attracted to enemies, each dealing [VALUE]% of Fire damage",
+      "valueRange": [25, 50],
       "allowedTypes": ["Wand"]
     },
     {
       "id": 24,
       "name": "The Oculus",
       "description": "Gain the effect of the Teleport Enchantment for free. When you Evade using Teleport Enchantment your defense increases by [VALUE]%.",
+      "valueRange": [25, 50],
       "allowedTypes": ["Wand"]
     }
   ]

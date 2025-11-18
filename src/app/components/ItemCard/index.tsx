@@ -223,31 +223,34 @@ export default function ItemCard({
                         alt="Suffix Bullet"
                         className="mr-1 mt-0.5 3xl:mt-2"
                       />
+                      <div>
+                        {(() => {
+                          let dbSuffix = itemDB.suffixes.find((s) => s.name === suffix.name);
+                          if (!dbSuffix) {
+                            dbSuffix = itemDB.uniqueSuffixes.find((s) => s.name === suffix.name);
+                          }
 
-                      {suffix && (
-                        <div>
-                          {suffix.description ? (
-                            <p
-                              dangerouslySetInnerHTML={{
-                                __html: suffix.description
-                                  .replace(
-                                    /\[VALUE\]%/g,
-                                    `<span style='color:${suffixValueColor};'>${suffix.value}%</span>`
-                                  )
-                                  .replace(
-                                    /\[VALUE\]/g,
-                                    `<span style='color:${suffixValueColor};'>${suffix.value}</span>`
-                                  ),
-                              }}
-                            />
-                          ) : (
-                            <p>
-                              {suffix.name} —{' '}
-                              <span style={{ color: suffixValueColor }}>{suffix.value}%</span>
-                            </p>
-                          )}
-                        </div>
-                      )}
+                          if (!dbSuffix || !dbSuffix.description) {
+                            return (
+                              <p>
+                                {suffix.name} —{' '}
+                                <span style={{ color: suffixValueColor }}>{suffix.value}%</span>
+                              </p>
+                            );
+                          }
+
+                          const desc = dbSuffix.description
+                            .replace(
+                              /\[VALUE\]%/g,
+                              `<span style='color:${suffixValueColor};'>${suffix.value}%</span>`
+                            )
+                            .replace(
+                              /\[VALUE\]/g,
+                              `<span style='color:${suffixValueColor};'>${suffix.value}</span>`
+                            );
+                          return <p dangerouslySetInnerHTML={{ __html: desc }} />;
+                        })()}
+                      </div>
                     </li>
                   ) : null}
                 </ul>

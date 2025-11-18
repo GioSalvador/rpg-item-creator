@@ -13,12 +13,12 @@ export default function Home() {
   const [itemPower, setItemPower] = useState(1);
   const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
   const [affixes, setAffixes] = useState<AffixValue[]>([
-    { name: 'Damage to Bleeding Enemies', value: 1 },
-    { name: 'Damage to Close Enemies', value: 1 },
-    { name: '', value: 1 },
-    { name: '', value: 1 },
-    { name: '', value: 1 },
-    { name: '', value: 1 },
+    { name: '', value: 0 },
+    { name: '', value: 0 },
+    { name: '', value: 0 },
+    { name: '', value: 0 },
+    { name: '', value: 0 },
+    { name: '', value: 0 },
   ]);
   const [suffix, setSuffix] = useState<SuffixValue | null>(null);
   const [itemQuote, setItemQuote] = useState('');
