@@ -22,7 +22,7 @@
 
 1. Clone the repository:  
    ```bash
-   git clone [https://github.com/GioSalvador/rpg-item-creator.git]
+   git clone https://github.com/GioSalvador/rpg-item-creator.git
    cd rpg-item-creator
    
 2. Install dependencies: 
