@@ -1,7 +1,7 @@
 # RPG Item Creator
 𝔟𝔶: 𝔊𝔦𝔬𝔳𝔞𝔫𝔦 𝔖𝔞𝔩𝔳𝔞𝔡𝔬𝔯
 
-**RPG Item Creator** is a frontend application built with Next.js and Tailwind, intended to allow users to design and generate items for RPG contexts via a user-friendly interface.  
+**RPG Item Creator** is a front-end application built with Next.js and Tailwind, intended to allow users to design and generate RPG items via a user-friendly interface.  
 
 ➡️ [Live Demo](https://rpg-item-creator.vercel.app/) *(Deployed via Vercel)*
 
