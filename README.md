@@ -56,6 +56,7 @@ On your computer, hover your cursor over the item's card to see an interesting a
 
 - Create a download bottom to download the Item Card. 
 - Create a back-end database and transform this project into a Full Stack system.
+- Create animations for when the item's rarity and attributes change.
 - Add other equipment such as armor, miscellaneous, etc. 
 
 Feel free to check out my GitHub profile @GioSalvador for more projects.
