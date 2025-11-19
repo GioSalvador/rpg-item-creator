@@ -1,34 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RPG Item Creator
+𝔟𝔶: 𝔊𝔦𝔬𝔳𝔞𝔫𝔦 𝔖𝔞𝔩𝔳𝔞𝔡𝔬𝔯
 
-## Getting Started
+**RPG Item Creator** is a frontend application built with Next.js and Tailwind, intended to allow users to design and generate items for RPG contexts via a user-friendly interface.  
 
-First, run the development server:
+➡️ [Live Demo](https://rpg-item-creator.vercel.app/) *(Deployed via Vercel)*
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Item creation UI: define name, image, stats, value, etc.  
+- Instant preview and editing capabilities.  
+- Responsive front-end design (via Tailwind CSS)  
+- Strong TypeScript support.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Getting Started (Local Setup)
 
-## Learn More
+### Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+- Node.js (v14+ recommended)  
+- npm / yarn / pnpm (choose your preferred package manager)  
+- Git (for cloning the repository)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository:  
+   ```bash
+   git clone [https://github.com/GioSalvador/weather-app.git](https://github.com/GioSalvador/rpg-item-creator.git)
+   cd rpg-item-creator
+   
+2. Install dependencies: 
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   
+3. Start the development server: 
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   
+4. Open http://localhost:3000 in your browser to view the app.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Usage
 
-## Deploy on Vercel
+Once the server is running, use the UI to:
+- Fill in the item fields: name, type, rarity, stats, imgage, etc.
+- Preview the item display immediately.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tips
+On computer, hover de item card for a cool animation.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Future Enhancements
+
+- Create a download bottom to download the Item Card. 
+- Create a back-end database and transform this project into a Full Stack system.
+- Add other equipment such as armor, miscellaneous, etc. 
+
+Feel free to check out my GitHub profile @GioSalvador for more projects.
