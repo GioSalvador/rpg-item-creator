@@ -46,11 +46,11 @@
 ## Usage
 
 Once the server is running, use the UI to:
-- Fill in the item fields: name, type, rarity, stats, imgage, etc.
+- Fill in the item fields: name, type, rarity, stats, image, etc.
 - Preview the item display immediately.
 
 ## Tips
-On computer, hover de item card for a cool animation.
+On your computer, hover your cursor over the item's card to see an interesting animation.
 
 ## Future Enhancements
 
