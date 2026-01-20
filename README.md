@@ -51,6 +51,7 @@ Once the server is running, use the UI to:
 
 ## Tips
 On your computer, hover your cursor over the item's card to see an interesting animation.
+![Image](https://github.com/user-attachments/assets/97626efc-96e7-4390-96e2-21046c95262c)
 
 ## Future Enhancements
 
