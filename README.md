@@ -66,4 +66,4 @@ I’m open to connect on [LinkedIn](https://www.linkedin.com/in/giovani-salvador
 Thank you for visiting my portfolio project!
 
 ## Preview
-https://github.com/user-attachments/assets/1ee3c7fb-67a9-490d-88f9-0a76d1eb976e
+https://github.com/user-attachments/assets/cc077f86-ca38-494c-b08a-92fdeb7c8b43
