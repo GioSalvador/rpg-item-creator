@@ -64,3 +64,6 @@ Feel free to check out my GitHub profile @GioSalvador for more projects.
 I’m open to connect on [LinkedIn](https://www.linkedin.com/in/giovani-salvador/) or via E-mail: gsalvador9817@gmail.com to discuss collaborations or job opportunities.
 
 Thank you for visiting my portfolio project!
+
+## Preview
+https://github.com/user-attachments/assets/1ee3c7fb-67a9-490d-88f9-0a76d1eb976e
