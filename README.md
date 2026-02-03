@@ -24,7 +24,7 @@
    ```bash
    git clone https://github.com/GioSalvador/rpg-item-creator.git
    cd rpg-item-creator
-   
+    ```
 2. Install dependencies: 
    ```bash
    npm install
@@ -32,7 +32,7 @@
    yarn install
    # or
    pnpm install
-   
+    ```
 3. Start the development server: 
    ```bash
    npm run dev
@@ -40,7 +40,7 @@
    yarn dev
    # or
    pnpm dev
-   
+    ```
 4. Open http://localhost:3000 in your browser to view the app.
 
 ## Usage
